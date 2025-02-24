@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Blog Feed
+
+This is a **Next.js** project that fetches and displays blog content from Varian's API, supporting multiple languages.
+
+## Features
+
+- **Next.js 15** with App Router
+- **Dynamic blog feed** from Varian's REST API
+- **Language toggle** (English & Finnish) with local storage persistence
+- **Optimized images** using `next/image`
+- **Tailwind CSS** for styling
+- **Lato Google Font** integration
 
 ## Getting Started
 
-First, run the development server:
+First, clone the repository:
+
+```bash
+git clone https://github.com/nbolin/blog-feed.git
+cd blog-feed
+```
+
+Then, install dependencies:
+
+```bash
+npm install
+# or
+yarn install
+# or
+pnpm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the blog feed.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Integration
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load Lato Google Font.
+The app fetches blog posts from Varian's API:
+
+- **English Feed:** `https://www.varian.com/rest-api/varian-blog-data?_format=json&limit=10`
+- **Finnish Feed:** `https://www.varian.com/fi/rest-api/varian-blog-data?_format=json&limit=10`
+
+## Deployment
+
+To deploy, build the project:
+
+```bash
+npm run build
+```
+
+Then, use a hosting platform like **Vercel**:
+
+```bash
+vercel
+```
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+For more details, check out:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vercel Deployment](https://vercel.com/docs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Let me know if you need any updates! 🚀
