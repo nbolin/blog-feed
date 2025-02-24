@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
-import TruncatedDescription from "@/components/HtmlTruncatedDescription";
+import TruncatedDescription from "@/components/TruncatedDescription";
 import { BlogPost } from "@/interface/blogPost";
 import Image from "next/image";
 
