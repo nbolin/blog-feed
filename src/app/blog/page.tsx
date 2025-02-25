@@ -5,7 +5,6 @@ import { BlogPost } from "@/interface/blogPost";
 import Image from "next/image";
 
 export default function BlogPage() {
-  // ✅ Fix: Initialize state from localStorage immediately
   const [language, setLanguage] = useState(() => {
     if (typeof window !== "undefined") {
       return localStorage.getItem("blogLanguage") || "en";
@@ -17,14 +16,12 @@ export default function BlogPage() {
   const API_BASE_URL = "https://www.varian.com";
   const API_URL = `${API_BASE_URL}/${language === "fi" ? "fi" : ""}/rest-api/varian-blog-data?_format=json&limit=10`;
 
-  // ✅ Store language change in localStorage
   useEffect(() => {
     if (typeof window !== "undefined") {
       localStorage.setItem("blogLanguage", language);
     }
   }, [language]);
 
-  // ✅ Fetch posts when language changes
   useEffect(() => {
     async function fetchPosts() {
       try {
@@ -50,7 +47,6 @@ export default function BlogPage() {
         >
           {language === "en" ? "Finnish" : "English"}
         </button>
-
       </div>
 
       <div className="space-y-6">
@@ -60,7 +56,6 @@ export default function BlogPage() {
 
             return (
               <div key={blog.nid} className="border rounded-lg p-4 shadow-md bg-white flex flex-col sm:flex-row gap-4">
-                {/* Responsive image */}
                 {blog.widen_image_id && (
                   <div className="w-full sm:w-1/3 flex-shrink-0">
                     <Image
@@ -73,7 +68,6 @@ export default function BlogPage() {
                     />
                   </div>
                 )}
-                {/* Content */}
                 <div className="sm:w-2/3">
                   <h2 className="text-lg font-semibold text-gray-900 mb-2">
                     <a
