@@ -1,4 +1,4 @@
-"use client"; // Required for event handlers in Next.js App Router
+"use client";
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
